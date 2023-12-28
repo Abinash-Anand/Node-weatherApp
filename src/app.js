@@ -1,4 +1,5 @@
 const path = require('path')
+const cors = require('cors')
 const express = require("express");
 const hbs = require('hbs');
 const request = require('postman-request')
@@ -7,6 +8,8 @@ const geocodes = require('./utils/geocodes');
 
 
 const app = express();
+app.use(cors())
+
 const publicDirPath = path.join(__dirname, "../public")
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsDirPath = path.join(__dirname, '../templates/partials')

@@ -1,7 +1,9 @@
 // //Geocoding api 
 const request = require("postman-request")
 const geocodes = (address, callback)=>{
-    const geoCodeApi = "https://api.geoapify.com/v1/geocode/search?text="+encodeURIComponent(address)+"&apiKey=7bd45d0eb67b45069780c6afec7deb91";
+    const locatioName = address
+    console.log(locatioName);
+    const geoCodeApi = "https://api.geoapify.com/v1/geocode/search?text="+locatioName+"&apiKey=7bd45d0eb67b45069780c6afec7deb91";
     request({url: geoCodeApi, json: true},(error, response)=>{
         
         if(error){
